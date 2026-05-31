@@ -1,0 +1,155 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --background-alt: #f5f5f5;
+  --foreground: #1a1a1a;
+  --primary: #c41e3a;
+  --primary-dark: #9e1830;
+  --secondary: #2c3e50;
+  --muted: #5c5c5c;
+  --card: #ffffff;
+  --border: #dddddd;
+  --finder-bg: #f0f0f0;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-background-alt: var(--background-alt);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-primary-dark: var(--primary-dark);
+  --color-secondary: var(--secondary);
+  --color-muted: var(--muted);
+  --color-card: var(--card);
+  --color-border: var(--border);
+  --color-finder-bg: var(--finder-bg);
+  --font-sans: var(--font-inter);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-inter), system-ui, sans-serif;
+}
+
+.container-page {
+  @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
+}
+
+.btn-primary {
+  @apply inline-flex items-center justify-center rounded border-0 bg-primary px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-primary-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary;
+}
+
+.btn-secondary {
+  @apply inline-flex items-center justify-center rounded border border-border bg-card px-4 py-2 text-sm font-semibold text-foreground transition hover:bg-background-alt focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary;
+}
+
+.section-title {
+  @apply text-2xl font-bold tracking-tight text-foreground sm:text-3xl;
+}
+
+.card-surface {
+  @apply rounded border border-border bg-card;
+}
+
+.finder-strip {
+  @apply border-b border-border bg-finder-bg;
+}
+
+.category-section {
+  @apply border-b border-border py-8 sm:py-10;
+}
+
+.category-section-alt {
+  @apply border-b border-border bg-background-alt py-8 sm:py-10;
+}
+
+.category-section-title {
+  @apply flex flex-wrap items-center justify-between gap-3 border-b border-border pb-3;
+}
+
+.select-field {
+  @apply w-full rounded border border-border bg-white px-3 py-2 text-sm text-foreground focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary;
+}
+
+.hero-part {
+  position: absolute;
+  display: block;
+  filter: drop-shadow(0 18px 20px rgba(0, 0, 0, 0.35));
+}
+
+.hero-part-lamp {
+  right: 52px;
+  top: 34px;
+  width: 188px;
+  height: 78px;
+  border: 10px solid #d9e4eb;
+  border-left-width: 24px;
+  border-radius: 60% 22% 40% 18%;
+  background: linear-gradient(135deg, #ffffff, #9fb0bd 45%, #f7c64f 46%, #f7c64f 70%, #ffffff 71%);
+  transform: rotate(-7deg);
+}
+
+.hero-part-rotor {
+  right: 134px;
+  bottom: 28px;
+  width: 124px;
+  height: 124px;
+  border: 18px solid #cbd5df;
+  border-radius: 50%;
+  background: radial-gradient(circle, #2d3742 0 18%, #eef3f7 19% 28%, #8b98a5 29% 100%);
+}
+
+.hero-part-pump {
+  right: 34px;
+  bottom: 50px;
+  width: 78px;
+  height: 136px;
+  border-radius: 22px;
+  background: linear-gradient(90deg, #202a33, #73808d 48%, #c5ced6);
+  transform: rotate(16deg);
+}
+
+.part-art-headlight,
+.part-art-bumper,
+.part-art-pump {
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.part-art-headlight {
+  background-image:
+    radial-gradient(ellipse at 60% 52%, #f4c64e 0 16%, transparent 17%),
+    linear-gradient(145deg, transparent 30%, #ffffff 31% 38%, #8795a3 39% 62%, transparent 63%),
+    radial-gradient(ellipse at center, #bfcad5 0 34%, transparent 35%);
+  background-size: 220px 105px, 260px 130px, 280px 140px;
+}
+
+.part-art-bumper {
+  background-image:
+    linear-gradient(110deg, transparent 20%, #d8e1e8 21% 80%, transparent 81%),
+    radial-gradient(ellipse at 50% 80%, #7e8b98 0 36%, transparent 37%);
+  background-size: 310px 110px, 360px 88px;
+}
+
+.part-art-pump {
+  background-image:
+    radial-gradient(circle at 50% 20%, #202a33 0 18%, transparent 19%),
+    linear-gradient(90deg, transparent 32%, #202a33 33% 45%, #8d9aa7 46% 68%, transparent 69%),
+    linear-gradient(180deg, transparent 20%, #cbd5df 21% 78%, transparent 79%);
+  background-size: 150px 150px, 210px 145px, 130px 170px;
+}
+
+@media (max-width: 640px) {
+  .hero-part-lamp {
+    right: 52px;
+    width: 150px;
+  }
+
+  .hero-part-rotor {
+    right: 118px;
+    width: 96px;
+    height: 96px;
+  }
+}
