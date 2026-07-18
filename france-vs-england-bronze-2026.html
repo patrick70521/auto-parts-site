@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>France vs England — World Cup 2026 Bronze Medal Match</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --fra-navy: #002395;
+      --fra-red: #ED2939;
+      --eng-red: #CF081F;
+      --eng-navy: #012169;
+      --ink: #0b1220;
+      --paper: #eef2f7;
+      --muted: #5a6578;
+      --pitch-a: #1f7a3a;
+      --pitch-b: #176330;
+      --line: rgba(255, 255, 255, 0.85);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: "Source Sans 3", sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(1200px 600px at 10% -10%, rgba(0, 35, 149, 0.18), transparent 55%),
+        radial-gradient(1000px 500px at 100% 0%, rgba(207, 8, 31, 0.14), transparent 50%),
+        linear-gradient(180deg, #f7f9fc 0%, var(--paper) 100%);
+      line-height: 1.45;
+    }
+
+    h1, h2, h3, .display {
+      font-family: "Bebas Neue", sans-serif;
+      letter-spacing: 0.03em;
+      font-weight: 400;
+      margin: 0;
+    }
+
+    p { margin: 0 0 0.75rem; }
+
+    .section-sub, .note, .hero-meta, .hero-sub {
+      color: var(--muted);
+    }
+
+    section {
+      padding: 2.75rem 1.25rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    main > section {
+      opacity: 0;
+      transform: translateY(12px);
+      animation: sectionIn 0.7s ease forwards;
+    }
+    main > section:nth-of-type(1) { animation-delay: 0.05s; }
+    main > section:nth-of-type(2) { animation-delay: 0.12s; }
+    main > section:nth-of-type(3) { animation-delay: 0.18s; }
+    main > section:nth-of-type(4) { animation-delay: 0.24s; }
+
+    @keyframes sectionIn {
+      to { opacity: 1; transform: none; }
+    }
+
+    /* Hero */
+    #hero {
+      min-height: 72vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 3rem 1.25rem 2.5rem;
+      position: relative;
+      overflow: hidden;
+      background:
+        linear-gradient(105deg, rgba(0, 35, 149, 0.92) 0%, rgba(0, 35, 149, 0.75) 42%, rgba(207, 8, 31, 0.78) 58%, rgba(1, 33, 105, 0.92) 100%),
+        repeating-linear-gradient(
+          -18deg,
+          transparent,
+          transparent 14px,
+          rgba(255, 255, 255, 0.03) 14px,
+          rgba(255, 255, 255, 0.03) 28px
+        );
+      color: #fff;
+    }
+
+    #hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 50% 120%, rgba(255, 255, 255, 0.12), transparent 55%);
+      pointer-events: none;
+      animation: wash 4s ease-in-out infinite alternate;
+    }
+
+    @keyframes wash {
+      from { opacity: 0.35; }
+      to { opacity: 0.85; }
+    }
+
+    #hero > * { position: relative; z-index: 1; max-width: 1100px; width: 100%; margin-left: auto; margin-right: auto; }
+
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      font-size: 0.8rem;
+      font-weight: 700;
+      opacity: 0.9;
+      margin-bottom: 1rem;
+    }
+
+    .hero-teams {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: 0.65rem 1.1rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero-teams .team {
+      font-size: clamp(3.4rem, 12vw, 6.5rem);
+      line-height: 0.9;
+      text-shadow: 0 6px 30px rgba(0, 0, 0, 0.25);
+    }
+
+    .hero-teams .vs {
+      font-family: "Bebas Neue", sans-serif;
+      font-size: clamp(1.6rem, 4vw, 2.4rem);
+      opacity: 0.75;
+      align-self: center;
+    }
+
+    .hero-sub {
+      color: rgba(255, 255, 255, 0.9);
+      font-size: 1.15rem;
+      max-width: 36rem;
+      margin-bottom: 0.85rem;
+    }
+
+    .hero-meta {
+      color: rgba(255, 255, 255, 0.75);
+      font-size: 0.95rem;
+      margin: 0;
+    }
+
+    /* Context */
+    .context-grid {
+      display: grid;
+      gap: 1.25rem;
+      grid-template-columns: 1fr;
+    }
+
+    @media (min-width: 720px) {
+      .context-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    .side {
+      padding: 1.25rem 0 0.25rem;
+      border-top: 4px solid;
+    }
+
+    .side.fra { border-color: var(--fra-navy); }
+    .side.eng { border-color: var(--eng-red); }
+    .side h2 { font-size: 2.4rem; margin-bottom: 0.4rem; }
+    .side.fra h2 { color: var(--fra-navy); }
+    .side.eng h2 { color: var(--eng-red); }
+    .side ul { margin: 0.75rem 0 0; padding-left: 1.1rem; color: var(--muted); }
+    .side li { margin-bottom: 0.35rem; }
+
+    .note { font-size: 0.9rem; margin-top: 1.25rem; }
+
+    /* Lineups */
+    #lineups h2, #stars h2, #squads h2 {
+      font-size: clamp(2.2rem, 5vw, 3rem);
+      margin-bottom: 0.35rem;
+    }
+
+    .pitches {
+      display: grid;
+      gap: 1.5rem;
+      grid-template-columns: 1fr;
+      margin-top: 1.5rem;
+    }
+
+    @media (min-width: 800px) {
+      .pitches { grid-template-columns: 1fr 1fr; }
+    }
+
+    .pitch-wrap h3 {
+      font-size: 1.8rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .pitch-wrap.fra h3 { color: var(--fra-navy); }
+    .pitch-wrap.eng h3 { color: var(--eng-red); }
+
+    .pitch {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 4px;
+      box-shadow: 0 12px 40px rgba(11, 18, 32, 0.18);
+    }
+
+    .player-marker {
+      opacity: 0;
+      transform: translateY(8px);
+      animation: markerIn 0.55s ease forwards;
+    }
+
+    .player-marker:nth-child(1) { animation-delay: 0.05s; }
+    .player-marker:nth-child(2) { animation-delay: 0.08s; }
+    .player-marker:nth-child(3) { animation-delay: 0.11s; }
+    .player-marker:nth-child(4) { animation-delay: 0.14s; }
+    .player-marker:nth-child(5) { animation-delay: 0.17s; }
+    .player-marker:nth-child(6) { animation-delay: 0.2s; }
+    .player-marker:nth-child(7) { animation-delay: 0.23s; }
+    .player-marker:nth-child(8) { animation-delay: 0.26s; }
+    .player-marker:nth-child(9) { animation-delay: 0.29s; }
+    .player-marker:nth-child(10) { animation-delay: 0.32s; }
+    .player-marker:nth-child(11) { animation-delay: 0.35s; }
+
+    @keyframes markerIn {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Stars */
+    .stars-grid {
+      display: grid;
+      gap: 1rem;
+      grid-template-columns: 1fr;
+      margin-top: 1.5rem;
+    }
+
+    @media (min-width: 600px) {
+      .stars-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (min-width: 960px) {
+      .stars-grid { grid-template-columns: 1fr 1fr 1fr; }
+    }
+
+    .star-card {
+      background: rgba(255, 255, 255, 0.72);
+      border: 1px solid rgba(11, 18, 32, 0.08);
+      border-left: 5px solid;
+      padding: 1.1rem 1.15rem 1.2rem;
+      backdrop-filter: blur(6px);
+    }
+
+    .star-card.fra { border-left-color: var(--fra-navy); color: var(--fra-navy); }
+    .star-card.eng { border-left-color: var(--eng-red); color: var(--eng-red); }
+
+    .star-card h3 {
+      font-size: 1.7rem;
+      color: var(--ink);
+      margin: 0.35rem 0 0.1rem;
+    }
+
+    .star-card .meta {
+      color: var(--muted);
+      font-size: 0.92rem;
+      margin-bottom: 0.85rem;
+    }
+
+    .avatar {
+      width: 3.1rem;
+      height: 3.1rem;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      font-family: "Bebas Neue", sans-serif;
+      font-size: 1.35rem;
+      color: #fff;
+      position: relative;
+      background: currentColor;
+    }
+
+    .avatar span {
+      position: absolute;
+      bottom: -0.15rem;
+      right: -0.25rem;
+      background: var(--ink);
+      color: #fff;
+      font-family: "Source Sans 3", sans-serif;
+      font-size: 0.65rem;
+      font-weight: 700;
+      padding: 0.12rem 0.28rem;
+      border-radius: 3px;
+    }
+
+    .star-card dl {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.4rem;
+      margin: 0 0 0.9rem;
+    }
+
+    .star-card dt {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--muted);
+    }
+
+    .star-card dd {
+      margin: 0;
+      font-weight: 700;
+      font-size: 1.05rem;
+      color: var(--ink);
+    }
+
+    .bars { display: grid; gap: 0.45rem; }
+
+    .bar {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: 0.5rem;
+      color: inherit;
+    }
+
+    .bar > i {
+      display: block;
+      height: 8px;
+      width: 0;
+      background: currentColor;
+      border-radius: 999px;
+      transition: width 0.8s ease;
+      grid-column: 1;
+    }
+
+    .bar > span {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--muted);
+    }
+
+    .bar.goals.is-on > i { width: calc(var(--v) / 8 * 100%); }
+    .bar.assists.is-on > i { width: calc(var(--v) / 5 * 100%); }
+
+    /* Squads */
+    .tables {
+      display: grid;
+      gap: 2rem;
+      margin-top: 1.5rem;
+    }
+
+    @media (min-width: 900px) {
+      .tables { grid-template-columns: 1fr 1fr; }
+    }
+
+    .tables h3 {
+      font-size: 1.9rem;
+      margin-bottom: 0.65rem;
+    }
+
+    .tables .fra-title { color: var(--fra-navy); }
+    .tables .eng-title { color: var(--eng-red); }
+
+    .table-scroll { overflow-x: auto; }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.92rem;
+      min-width: 420px;
+    }
+
+    th, td {
+      text-align: left;
+      padding: 0.45rem 0.4rem;
+      border-bottom: 1px solid rgba(11, 18, 32, 0.08);
+    }
+
+    th {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--muted);
+    }
+
+    tr.has-goals td:nth-child(5) {
+      color: var(--fra-navy);
+      font-weight: 700;
+    }
+
+    #england-squad tr.has-goals td:nth-child(5) {
+      color: var(--eng-red);
+    }
+
+    tr.has-assists td:nth-child(6) {
+      font-weight: 700;
+    }
+
+    /* Footer */
+    #footer {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 2rem 1.25rem 3rem;
+      border-top: 1px solid rgba(11, 18, 32, 0.1);
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    #footer p { margin-bottom: 0.55rem; }
+    #footer strong { color: var(--ink); }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation: none !important;
+        transition: none !important;
+      }
+      main > section { opacity: 1; transform: none; }
+      .player-marker { opacity: 1; transform: none; }
+      .bar > i { width: calc(var(--v) / 8 * 100%); }
+      .bar.assists > i { width: calc(var(--v) / 5 * 100%); }
+    }
+
+    @media print {
+      body { background: white; }
+      #hero { min-height: auto; padding: 1.5rem; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .star-card .bar > i { transition: none; }
+      main > section { opacity: 1; transform: none; animation: none; break-inside: avoid; }
+      tr { break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+  <header id="hero">
+    <p class="eyebrow">FIFA World Cup 2026 · Bronze Medal Match</p>
+    <div class="hero-teams" aria-label="France versus England">
+      <h1 class="team fra">France</h1>
+      <span class="vs">vs</span>
+      <h1 class="team eng">England</h1>
+    </div>
+    <p class="hero-sub">One more night in Miami — pride, bronze, and a final World Cup statement.</p>
+    <p class="hero-meta">Saturday 18 July 2026 · Miami Stadium · 5:00 PM EDT / 10:00 PM BST</p>
+  </header>
+
+  <main>
+    <section id="context" aria-label="Tournament context">
+      <div class="context-grid">
+        <article class="side fra">
+          <h2>France</h2>
+          <p>Semi-final: lost to Spain. Les Bleus carried one of the tournament’s sharpest attacks before the SF shutout.</p>
+          <ul>
+            <li>Strong group-to-knockout run under Deschamps</li>
+            <li>Clean sheets: 4 (preview figures)</li>
+            <li>Deschamps’ final match in charge</li>
+          </ul>
+        </article>
+        <article class="side eng">
+          <h2>England</h2>
+          <p>Semi-final: lost 2–1 to Argentina after leading. Chasing a first-ever World Cup bronze medal.</p>
+          <ul>
+            <li>Goals scored this World Cup: 14</li>
+            <li>Wins this World Cup: 5</li>
+            <li>Prior 3rd-place record: 0–2</li>
+          </ul>
+        </article>
+      </div>
+      <p class="note">Individual player tables below use tournament stats through the semi-finals. Lineups are predicted.</p>
+    </section>
+
+    <section id="lineups">
+      <h2 class="display">Predicted XIs</h2>
+      <p class="section-sub">Not official team sheets — based on recent starts and bronze-match preview reports. Rotation possible.</p>
+      <div class="pitches">
+        <div class="pitch-wrap fra">
+          <h3>France · Predicted XI</h3>
+          <svg class="pitch" viewBox="0 0 360 480" role="img" aria-label="France predicted formation 4-2-3-1">
+            <defs>
+              <linearGradient id="grassFra" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#228B45"/>
+                <stop offset="100%" stop-color="#176330"/>
+              </linearGradient>
+            </defs>
+            <rect width="360" height="480" fill="url(#grassFra)"/>
+            <g fill="none" stroke="rgba(255,255,255,0.85)" stroke-width="2">
+              <rect x="16" y="16" width="328" height="448"/>
+              <line x1="16" y1="240" x2="344" y2="240"/>
+              <circle cx="180" cy="240" r="44"/>
+              <rect x="105" y="16" width="150" height="70"/>
+              <rect x="130" y="16" width="100" height="32"/>
+              <rect x="105" y="394" width="150" height="70"/>
+              <rect x="130" y="432" width="100" height="32"/>
+            </g>
+            <!-- ST -->
+            <g class="player-marker" transform="translate(180 78)">
+              <circle r="18" fill="#002395"/><text text-anchor="middle" dy="5" fill="#fff" font-size="12" font-family="Bebas Neue,sans-serif">10</text>
+              <text text-anchor="middle" y="34" fill="#fff" font-size="11" font-family="Source Sans 3,sans-serif" font-weight="700">Mbappé</text>
+            </g>
+            <!-- AM -->
+            <g class="player-marker" transform="translate(70 168)">
+              <circle r="18" fill="#002395"/><text text-anchor="middle" dy="5" fill="#fff" font-size="12" font-family="Bebas Neue,sans-serif">12</text>
+              <text text-anchor="middle" y="34" fill="#fff" font-size="11" font-family="Source Sans 3,sans-serif" font-weight="700">Barcola</text>
+            </g>
+            <g class="player-marker" transform="translate(180 168)">
+              <circle r="18" fill="#002395"/><text text-anchor="middle" dy="5" fill="#fff" font-size="12" font-family="Bebas Neue,sans-serif">7</text>
+              <text text-anchor="middle" y="34" fill="#fff" font-size="11" font-family="Source Sans 3,sans-serif" font-weight="700">Dembélé</text>
+            </g>
+            <g class="player-marker" transform="translate(290 168)">
+              <circle r="18" fill="#002395"/><text text-anchor="middle" dy="5" fill="#fff" font-size="12" font-family="Bebas Neue,sans-serif">11</text>
+              <text text-anchor="middle" y="34" fill="#fff" font-size="11" font-family="Source Sans 3,sans-serif" font-weight="700">Olise</text>
+            </g>
+            <!-- DM -->
+            <g class="player-marker" transform="translate(125 255)">
+              <circle r="18" fill="#002395"/><text text-anchor="middle" dy="5" fill="#fff" font-size="12" font-family="Bebas Neue,sans-serif">14</text>
+              <text text-anchor="middle" y="34" fill="#fff" font-size="11" font-family="Source Sans 3,sans-serif" font-weight="700">Rabiot</text>
+            </g>
+            <g class="player-marker" transform="translate(235 255)">
+              <circle r="18" fill="#002395"/><text text-anchor="middle" dy="5" fill="#fff" font-size="12" font-family="Bebas Neue,sans-serif">8</text>
+              <text text-anchor="middle" y="34" fill="#fff" font-size="11" font-family="Source Sans 3,sans-serif" font-weight="700">Tchouaméni</text>
+            </g>
+            <!-- DEF -->
+            <g class="player-marker" transform="translate(55 340)">
+              <circle r="18" fill="#002395"/><text text-anchor="middle" dy="5" fill="#fff" font-size="12" font-family="Bebas Neue,sans-serif">3</text>
+              <text text-anchor="middle" y="34" fill="#fff" font-size="11" font-family="Source Sans 3,sans-serif" font-weight="700">Digne</text>
+            </g>
+            <g class="player-marker" transform="translate(135 340)">
+              <circle r="18" fill="#002395"/><text text-anchor="middle" dy="5" fill="#fff" font-size="12" font-family="Bebas Neue,sans-serif">4</text>
+              <text text-anchor="middle" y="34" fill="#fff" font-size="11" font-family="Source Sans 3,sans-serif" font-weight="700">Upamecano</text>
+            </g>
+            <g class="player-marker" transform="translate(225 340)">
+              <circle r="18" fill="#002395"/><text text-anchor="middle" dy="5" fill="#fff" font-size="12" font-family="Bebas Neue,sans-serif">17</text>
+              <text text-anchor="middle" y="34" fill="#fff" font-size="11" font-family="Source Sans 3,sans-serif" font-weight="700">Saliba</text>
+            </g>
+            <g class="player-marker" transform="translate(305 340)">
+              <circle r="18" fill="#002395"/><text text-anchor="middle" dy="5" fill="#fff" font-size="12" font-family="Bebas Neue,sans-serif">5</text>
+              <text text-anchor="middle" y="34" fill="#fff" font-size="11" font-family="Source Sans 3,sans-serif" font-weight="700">Koundé</text>
+            </g>
+            <!-- GK -->
+            <g class="player-marker" transform="translate(180 425)">
+              <circle r="18" fill="#ED2939"/><text text-anchor="middle" dy="5" fill="#fff" font-size="12" font-family="Bebas Neue,sans-serif">16</text>
+              <text text-anchor="middle" y="34" fill="#fff" font-size="11" font-family="Source Sans 3,sans-serif" font-weight="700">Maignan</text>
+            </g>
+          </svg>
+        </div>
+
+        <div class="pitch-wrap eng">
+          <h3>England · Predicted XI</h3>
+          <svg class="pitch" viewBox="0 0 360 480" role="img" aria-label="England predicted formation 4-2-3-1">
+            <defs>
+              <linearGradient id="grassEng" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#228B45"/>
+                <stop offset="100%" stop-color="#176330"/>
+              </linearGradient>
+            </defs>
+            <rect width="360" height="480" fill="url(#grassEng)"/>
+            <g fill="none" stroke="rgba(255,255,255,0.85)" stroke-width="2">
+              <rect x="16" y="16" width="328" height="448"/>
+              <line x1="16" y1="240" x2="344" y2="240"/>
+              <circle cx="180" cy="240" r="44"/>
+              <rect x="105" y="16" width="150" height="70"/>
+              <rect x="130" y="16" width="100" height="32"/>
+              <rect x="105" y="394" width="150" height="70"/>
+              <rect x="130" y="432" width="100" height="32"/>
+            </g>
+            <g class="player-marker" transform="translate(180 78)">
+              <circle r="18" fill="#CF081F" stroke="#012169" stroke-width="2"/><text text-anchor="middle" dy="5" fill="#fff" font-size="12" font-family="Bebas Neue,sans-serif">9</text>
+              <text text-anchor="middle" y="34" fill="#fff" font-size="11" font-family="Source Sans 3,sans-serif" font-weight="700">Kane</text>
+            </g>
+            <g class="player-marker" transform="translate(70 168)">
+              <circle r="18" fill="#CF081F" stroke="#012169" stroke-width="2"/><text text-anchor="middle" dy="5" fill="#fff" font-size="12" font-family="Bebas Neue,sans-serif">18</text>
+              <text text-anchor="middle" y="34" fill="#fff" font-size="11" font-family="Source Sans 3,sans-serif" font-weight="700">Gordon</text>
+            </g>
+            <g class="player-marker" transform="translate(180 168)">
+              <circle r="18" fill="#CF081F" stroke="#012169" stroke-width="2"/><text text-anchor="middle" dy="5" fill="#fff" font-size="12" font-family="Bebas Neue,sans-serif">17</text>
+              <text text-anchor="middle" y="34" fill="#fff" font-size="11" font-family="Source Sans 3,sans-serif" font-weight="700">Rogers</text>
+            </g>
+            <g class="player-marker" transform="translate(290 168)">
+              <circle r="18" fill="#CF081F" stroke="#012169" stroke-width="2"/><text text-anchor="middle" dy="5" fill="#fff" font-size="12" font-family="Bebas Neue,sans-serif">7</text>
+              <text text-anchor="middle" y="34" fill="#fff" font-size="11" font-family="Source Sans 3,sans-serif" font-weight="700">Saka</text>
+            </g>
+            <g class="player-marker" transform="translate(125 255)">
+              <circle r="18" fill="#CF081F" stroke="#012169" stroke-width="2"/><text text-anchor="middle" dy="5" fill="#fff" font-size="12" font-family="Bebas Neue,sans-serif">4</text>
+              <text text-anchor="middle" y="34" fill="#fff" font-size="11" font-family="Source Sans 3,sans-serif" font-weight="700">Rice</text>
+            </g>
+            <g class="player-marker" transform="translate(235 255)">
+              <circle r="18" fill="#CF081F" stroke="#012169" stroke-width="2"/><text text-anchor="middle" dy="5" fill="#fff" font-size="12" font-family="Bebas Neue,sans-serif">10</text>
+              <text text-anchor="middle" y="34" fill="#fff" font-size="11" font-family="Source Sans 3,sans-serif" font-weight="700">Bellingham</text>
+            </g>
+            <g class="player-marker" transform="translate(55 340)">
+              <circle r="18" fill="#CF081F" stroke="#012169" stroke-width="2"/><text text-anchor="middle" dy="5" fill="#fff" font-size="12" font-family="Bebas Neue,sans-serif">25</text>
+              <text text-anchor="middle" y="34" fill="#fff" font-size="11" font-family="Source Sans 3,sans-serif" font-weight="700">Spence</text>
+            </g>
+            <g class="player-marker" transform="translate(135 340)">
+              <circle r="18" fill="#CF081F" stroke="#012169" stroke-width="2"/><text text-anchor="middle" dy="5" fill="#fff" font-size="12" font-family="Bebas Neue,sans-serif">6</text>
+              <text text-anchor="middle" y="34" fill="#fff" font-size="11" font-family="Source Sans 3,sans-serif" font-weight="700">Guéhi</text>
+            </g>
+            <g class="player-marker" transform="translate(225 340)">
+              <circle r="18" fill="#CF081F" stroke="#012169" stroke-width="2"/><text text-anchor="middle" dy="5" fill="#fff" font-size="12" font-family="Bebas Neue,sans-serif">5</text>
+              <text text-anchor="middle" y="34" fill="#fff" font-size="11" font-family="Source Sans 3,sans-serif" font-weight="700">Stones</text>
+            </g>
+            <g class="player-marker" transform="translate(305 340)">
+              <circle r="18" fill="#CF081F" stroke="#012169" stroke-width="2"/><text text-anchor="middle" dy="5" fill="#fff" font-size="12" font-family="Bebas Neue,sans-serif">24</text>
+              <text text-anchor="middle" y="34" fill="#fff" font-size="11" font-family="Source Sans 3,sans-serif" font-weight="700">James</text>
+            </g>
+            <g class="player-marker" transform="translate(180 425)">
+              <circle r="18" fill="#012169"/><text text-anchor="middle" dy="5" fill="#fff" font-size="12" font-family="Bebas Neue,sans-serif">1</text>
+              <text text-anchor="middle" y="34" fill="#fff" font-size="11" font-family="Source Sans 3,sans-serif" font-weight="700">Pickford</text>
+            </g>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <section id="stars">
+      <h2 class="display">Star performers</h2>
+      <p class="section-sub">Tournament stats through the semi-finals.</p>
+      <div class="stars-grid">
+        <article class="star-card fra">
+          <div class="avatar" aria-hidden="true">10<span>KM</span></div>
+          <h3>Kylian Mbappé</h3>
+          <p class="meta">France · Forward</p>
+          <dl>
+            <div><dt>Apps</dt><dd>6</dd></div>
+            <div><dt>Goals</dt><dd>8</dd></div>
+            <div><dt>Assists</dt><dd>3</dd></div>
+            <div><dt>Mins</dt><dd>517</dd></div>
+          </dl>
+          <div class="bars" aria-hidden="true">
+            <div class="bar goals"><i style="--v:8"></i><span>G</span></div>
+            <div class="bar assists"><i style="--v:3"></i><span>A</span></div>
+          </div>
+        </article>
+
+        <article class="star-card fra">
+          <div class="avatar" aria-hidden="true">7<span>OD</span></div>
+          <h3>Ousmane Dembélé</h3>
+          <p class="meta">France · Forward</p>
+          <dl>
+            <div><dt>Apps</dt><dd>6</dd></div>
+            <div><dt>Goals</dt><dd>5</dd></div>
+            <div><dt>Assists</dt><dd>2</dd></div>
+            <div><dt>Mins</dt><dd>462</dd></div>
+          </dl>
+          <div class="bars" aria-hidden="true">
+            <div class="bar goals"><i style="--v:5"></i><span>G</span></div>
+            <div class="bar assists"><i style="--v:2"></i><span>A</span></div>
+          </div>
+        </article>
+
+        <article class="star-card fra">
+          <div class="avatar" aria-hidden="true">11<span>MO</span></div>
+          <h3>Michael Olise</h3>
+          <p class="meta">France · Forward · Assist leader</p>
+          <dl>
+            <div><dt>Apps</dt><dd>6</dd></div>
+            <div><dt>Goals</dt><dd>0</dd></div>
+            <div><dt>Assists</dt><dd>5</dd></div>
+            <div><dt>Mins</dt><dd>488</dd></div>
+          </dl>
+          <div class="bars" aria-hidden="true">
+            <div class="bar goals"><i style="--v:0"></i><span>G</span></div>
+            <div class="bar assists"><i style="--v:5"></i><span>A</span></div>
+          </div>
+        </article>
+
+        <article class="star-card eng">
+          <div class="avatar" aria-hidden="true">9<span>HK</span></div>
+          <h3>Harry Kane</h3>
+          <p class="meta">England · Forward · Captain</p>
+          <dl>
+            <div><dt>Apps</dt><dd>6</dd></div>
+            <div><dt>Goals</dt><dd>6</dd></div>
+            <div><dt>Assists</dt><dd>1</dd></div>
+            <div><dt>Mins</dt><dd>443</dd></div>
+          </dl>
+          <div class="bars" aria-hidden="true">
+            <div class="bar goals"><i style="--v:6"></i><span>G</span></div>
+            <div class="bar assists"><i style="--v:1"></i><span>A</span></div>
+          </div>
+        </article>
+
+        <article class="star-card eng">
+          <div class="avatar" aria-hidden="true">10<span>JB</span></div>
+          <h3>Jude Bellingham</h3>
+          <p class="meta">England · Midfielder</p>
+          <dl>
+            <div><dt>Apps</dt><dd>6</dd></div>
+            <div><dt>Goals</dt><dd>6</dd></div>
+            <div><dt>Assists</dt><dd>1</dd></div>
+            <div><dt>Mins</dt><dd>404</dd></div>
+          </dl>
+          <div class="bars" aria-hidden="true">
+            <div class="bar goals"><i style="--v:6"></i><span>G</span></div>
+            <div class="bar assists"><i style="--v:1"></i><span>A</span></div>
+          </div>
+        </article>
+
+        <article class="star-card eng">
+          <div class="avatar" aria-hidden="true">18<span>AG</span></div>
+          <h3>Anthony Gordon</h3>
+          <p class="meta">England · Forward</p>
+          <dl>
+            <div><dt>Apps</dt><dd>5</dd></div>
+            <div><dt>Goals</dt><dd>1</dd></div>
+            <div><dt>Assists</dt><dd>3</dd></div>
+            <div><dt>Mins</dt><dd>—</dd></div>
+          </dl>
+          <div class="bars" aria-hidden="true">
+            <div class="bar goals"><i style="--v:1"></i><span>G</span></div>
+            <div class="bar assists"><i style="--v:3"></i><span>A</span></div>
+          </div>
+        </article>
+
+        <article class="star-card eng">
+          <div class="avatar" aria-hidden="true">7<span>BS</span></div>
+          <h3>Bukayo Saka</h3>
+          <p class="meta">England · Forward</p>
+          <dl>
+            <div><dt>Apps</dt><dd>6</dd></div>
+            <div><dt>Goals</dt><dd>2</dd></div>
+            <div><dt>Assists</dt><dd>2</dd></div>
+            <div><dt>Mins</dt><dd>—</dd></div>
+          </dl>
+          <div class="bars" aria-hidden="true">
+            <div class="bar goals"><i style="--v:2"></i><span>G</span></div>
+            <div class="bar assists"><i style="--v:2"></i><span>A</span></div>
+          </div>
+        </article>
+
+        <article class="star-card fra">
+          <div class="avatar" aria-hidden="true">8<span>AT</span></div>
+          <h3>Aurélien Tchouaméni</h3>
+          <p class="meta">France · Midfielder</p>
+          <dl>
+            <div><dt>Apps</dt><dd>6</dd></div>
+            <div><dt>Goals</dt><dd>1</dd></div>
+            <div><dt>Assists</dt><dd>0</dd></div>
+            <div><dt>Mins</dt><dd>—</dd></div>
+          </dl>
+          <div class="bars" aria-hidden="true">
+            <div class="bar goals"><i style="--v:1"></i><span>G</span></div>
+            <div class="bar assists"><i style="--v:0"></i><span>A</span></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="squads">
+      <h2 class="display">Squad tournament stats</h2>
+      <p class="section-sub">Apps, goals, assists, minutes — tournament through SF. Em dash = not fully published in sources used.</p>
+      <div class="tables">
+        <div>
+          <h3 class="fra-title">France squad</h3>
+          <div class="table-scroll">
+            <table id="france-squad">
+              <thead>
+                <tr><th>#</th><th>Player</th><th>Pos</th><th>Apps</th><th>G</th><th>A</th><th>Mins</th></tr>
+              </thead>
+              <tbody>
+<tr class="has-goals has-assists"><td>10</td><td>Kylian Mbappé</td><td>FWD</td><td>6</td><td>8</td><td>3</td><td>517</td></tr>
+<tr class="has-assists"><td>11</td><td>Michael Olise</td><td>FWD</td><td>6</td><td>0</td><td>5</td><td>488</td></tr>
+<tr class="has-goals has-assists"><td>7</td><td>Ousmane Dembélé</td><td>FWD</td><td>6</td><td>5</td><td>2</td><td>462</td></tr>
+<tr><td>16</td><td>Mike Maignan</td><td>GK</td><td>6</td><td>0</td><td>0</td><td>—</td></tr>
+<tr><td>17</td><td>William Saliba</td><td>DEF</td><td>6</td><td>0</td><td>0</td><td>—</td></tr>
+<tr><td>4</td><td>Dayot Upamecano</td><td>DEF</td><td>6</td><td>0</td><td>0</td><td>—</td></tr>
+<tr><td>5</td><td>Jules Koundé</td><td>DEF</td><td>6</td><td>0</td><td>0</td><td>—</td></tr>
+<tr class="has-goals"><td>8</td><td>Aurélien Tchouaméni</td><td>MID</td><td>6</td><td>1</td><td>0</td><td>—</td></tr>
+<tr><td>3</td><td>Lucas Digne</td><td>DEF</td><td>5</td><td>0</td><td>0</td><td>—</td></tr>
+<tr><td>12</td><td>Bradley Barcola</td><td>FWD</td><td>5</td><td>1</td><td>1</td><td>—</td></tr>
+<tr><td>14</td><td>Adrien Rabiot</td><td>MID</td><td>5</td><td>0</td><td>1</td><td>—</td></tr>
+<tr class="has-goals"><td>9</td><td>Marcus Thuram</td><td>FWD</td><td>4</td><td>2</td><td>0</td><td>—</td></tr>
+<tr><td>19</td><td>Theo Hernández</td><td>DEF</td><td>3</td><td>0</td><td>0</td><td>—</td></tr>
+<tr><td>15</td><td>Ibrahima Konaté</td><td>DEF</td><td>3</td><td>0</td><td>0</td><td>—</td></tr>
+<tr><td>6</td><td>Manu Koné</td><td>MID</td><td>3</td><td>0</td><td>0</td><td>—</td></tr>
+<tr><td>20</td><td>Désiré Doué</td><td>FWD</td><td>3</td><td>1</td><td>0</td><td>—</td></tr>
+<tr><td>24</td><td>Rayan Cherki</td><td>FWD</td><td>3</td><td>0</td><td>1</td><td>—</td></tr>
+<tr><td>18</td><td>Warren Zaïre-Emery</td><td>MID</td><td>2</td><td>0</td><td>0</td><td>—</td></tr>
+<tr><td>2</td><td>Malo Gusto</td><td>DEF</td><td>2</td><td>0</td><td>0</td><td>—</td></tr>
+<tr><td>21</td><td>Lucas Hernández</td><td>DEF</td><td>2</td><td>0</td><td>0</td><td>—</td></tr>
+<tr><td>13</td><td>N'Golo Kanté</td><td>MID</td><td>1</td><td>0</td><td>0</td><td>—</td></tr>
+<tr><td>22</td><td>Jean-Philippe Mateta</td><td>FWD</td><td>1</td><td>0</td><td>0</td><td>—</td></tr>
+<tr><td>25</td><td>Maghnes Akliouche</td><td>FWD</td><td>1</td><td>0</td><td>0</td><td>—</td></tr>
+<tr><td>26</td><td>Maxence Lacroix</td><td>DEF</td><td>1</td><td>0</td><td>0</td><td>—</td></tr>
+<tr><td>1</td><td>Brice Samba</td><td>GK</td><td>0</td><td>0</td><td>0</td><td>—</td></tr>
+<tr><td>23</td><td>Robin Risser</td><td>GK</td><td>0</td><td>0</td><td>0</td><td>—</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div>
+          <h3 class="eng-title">England squad</h3>
+          <div class="table-scroll">
+            <table id="england-squad">
+              <thead>
+                <tr><th>#</th><th>Player</th><th>Pos</th><th>Apps</th><th>G</th><th>A</th><th>Mins</th></tr>
+              </thead>
+              <tbody>
+<tr class="has-goals has-assists"><td>9</td><td>Harry Kane</td><td>FWD</td><td>6</td><td>6</td><td>1</td><td>443</td></tr>
+<tr class="has-goals has-assists"><td>10</td><td>Jude Bellingham</td><td>MID</td><td>6</td><td>6</td><td>1</td><td>404</td></tr>
+<tr><td>1</td><td>Jordan Pickford</td><td>GK</td><td>6</td><td>0</td><td>0</td><td>—</td></tr>
+<tr><td>4</td><td>Declan Rice</td><td>MID</td><td>6</td><td>0</td><td>1</td><td>—</td></tr>
+<tr><td>5</td><td>John Stones</td><td>DEF</td><td>6</td><td>0</td><td>0</td><td>—</td></tr>
+<tr><td>6</td><td>Marc Guéhi</td><td>DEF</td><td>6</td><td>0</td><td>0</td><td>—</td></tr>
+<tr class="has-goals has-assists"><td>7</td><td>Bukayo Saka</td><td>FWD</td><td>6</td><td>2</td><td>2</td><td>—</td></tr>
+<tr class="has-goals has-assists"><td>18</td><td>Anthony Gordon</td><td>MID</td><td>5</td><td>1</td><td>3</td><td>—</td></tr>
+<tr><td>24</td><td>Reece James</td><td>DEF</td><td>5</td><td>0</td><td>1</td><td>—</td></tr>
+<tr><td>17</td><td>Morgan Rogers</td><td>MID</td><td>5</td><td>1</td><td>1</td><td>—</td></tr>
+<tr><td>25</td><td>Djed Spence</td><td>DEF</td><td>4</td><td>0</td><td>0</td><td>—</td></tr>
+<tr><td>21</td><td>Eberechi Eze</td><td>MID</td><td>4</td><td>1</td><td>0</td><td>—</td></tr>
+<tr><td>2</td><td>Ezri Konsa</td><td>DEF</td><td>3</td><td>0</td><td>0</td><td>—</td></tr>
+<tr><td>16</td><td>Kobbie Mainoo</td><td>MID</td><td>3</td><td>0</td><td>0</td><td>—</td></tr>
+<tr><td>8</td><td>Elliot Anderson</td><td>MID</td><td>3</td><td>0</td><td>0</td><td>—</td></tr>
+<tr class="has-goals"><td>11</td><td>Marcus Rashford</td><td>FWD</td><td>3</td><td>1</td><td>0</td><td>—</td></tr>
+<tr><td>19</td><td>Ollie Watkins</td><td>FWD</td><td>3</td><td>1</td><td>0</td><td>—</td></tr>
+<tr><td>20</td><td>Noni Madueke</td><td>MID</td><td>2</td><td>0</td><td>1</td><td>—</td></tr>
+<tr><td>15</td><td>Dan Burn</td><td>DEF</td><td>2</td><td>0</td><td>0</td><td>—</td></tr>
+<tr><td>12</td><td>Trevoh Chalobah</td><td>DEF</td><td>2</td><td>0</td><td>0</td><td>—</td></tr>
+<tr><td>3</td><td>Nico O'Reilly</td><td>DEF</td><td>2</td><td>0</td><td>0</td><td>—</td></tr>
+<tr><td>26</td><td>Jarell Quansah</td><td>DEF</td><td>1</td><td>0</td><td>0</td><td>—</td></tr>
+<tr><td>22</td><td>Ivan Toney</td><td>FWD</td><td>1</td><td>0</td><td>0</td><td>—</td></tr>
+<tr><td>14</td><td>Jordan Henderson</td><td>MID</td><td>1</td><td>0</td><td>0</td><td>—</td></tr>
+<tr><td>13</td><td>Dean Henderson</td><td>GK</td><td>0</td><td>0</td><td>0</td><td>—</td></tr>
+<tr><td>23</td><td>James Trafford</td><td>GK</td><td>0</td><td>0</td><td>0</td><td>—</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="footer">
+    <p><strong>Data note:</strong> Tournament player stats through the semi-finals. Lineups are <em>predicted</em>, not confirmed team sheets.</p>
+    <p>Sources: FIFA.com goal-contribution figures, England Football match centre, FFF/Sporting News France roster numbers, Stats Zone squad lists, match previews (18 Jul 2026).</p>
+    <p>Bellingham goal total uses latest England reporting (6); an earlier FIFA mid-tournament list showed 4 goals / 1 assist. Some Apps/Mins for squad players are best-available public figures or marked — when unpublished.</p>
+  </footer>
+
+  <script>
+    const io = new IntersectionObserver((entries) => {
+      for (const e of entries) {
+        if (e.isIntersecting) e.target.classList.add("is-on");
+      }
+    }, { threshold: 0.35 });
+    document.querySelectorAll(".bar").forEach((el) => io.observe(el));
+  </script>
+</body>
+</html>
